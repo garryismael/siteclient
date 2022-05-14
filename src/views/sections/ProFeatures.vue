@@ -3,103 +3,18 @@
     id="pro-features"
   >
     <v-img
-      :src="require('@/assets/logo.svg')"
+      :src="require('@/assets/images/fahagola_logo.png')"
       class="mx-auto mb-8"
       max-width="128"
     />
 
-    <base-section-heading title="Feature Comparison">
-      Get the PRO version of <strong>Zero</strong> and level up your theme<br>with additional components, pages, and Free updates.
+    <base-section-heading title="A Propos">
+      <strong>Fahagola</strong>, ou l'ancien temps en malgache, reflète notre objectif qui est de laisser une trace de notre existence dans ce monde, et même ailleurs. Notre site permet de sauvegarder des souvenirs du passé particuliers, ou des avancés technologiques indubitables à l'aide des fameuses capsules temporelles.
+      Marquer l'histoire avec <strong>Fahagola</strong>.
+      Notre site-web prend en main vos souvenirs les plus précieux pour les envoyer dans le futur.
+      Une réminiscence d'un monde passé, un voyage dans le futur des vestiges du présent.
+      Faites votre choix sur quelles données, jusqu'à quand voulez vous laisser une trace de ces données, et où souhaiteriez vous les garder. Nous nous occupons du reste.
     </base-section-heading>
-
-    <v-container>
-      <v-row
-        align="center"
-        justify="center"
-      >
-        <v-col
-          cols="12"
-          md="7"
-        >
-          <v-simple-table>
-            <thead>
-              <tr>
-                <th />
-                <th class="text-body-1 font-weight-bold text-center">
-                  What's in the Demo?
-                </th>
-                <th class="text-body-1 font-weight-bold text-center">
-                  What's in the PRO version?
-                </th>
-              </tr>
-            </thead>
-
-            <tbody class="text-body-1">
-              <tr
-                v-for="([name, one, two], i) in features"
-                :key="i"
-              >
-                <td v-text="name" />
-
-                <td class="text-center font-weight-bold">
-                  <template v-if="typeof one === 'boolean'">
-                    <v-icon :color="one ? 'success' : 'error'">
-                      mdi-{{ one ? 'check' : 'close' }}
-                    </v-icon>
-                  </template>
-
-                  <template v-else>
-                    {{ one }}
-                  </template>
-                </td>
-
-                <td class="text-center font-weight-bold">
-                  <template v-if="typeof two === 'boolean'">
-                    <v-icon :color="two ? 'success' : 'error'">
-                      mdi-{{ two ? 'check' : 'close' }}
-                    </v-icon>
-                  </template>
-
-                  <template v-else>
-                    {{ two }}
-                  </template>
-                </td>
-              </tr>
-            </tbody>
-          </v-simple-table>
-        </v-col>
-
-        <v-col
-          cols="12"
-          md="5"
-        >
-          <v-card
-            elevation="16"
-            class="mb-12"
-          >
-            <base-img
-              max-width="100%"
-              src="https://cdn.vuetifyjs.com/store/themes/zero/pro.png"
-            />
-          </v-card>
-
-          <div class="text-center">
-            <base-btn
-              :tile="false"
-              color="primary"
-              href="https://store.vuetifyjs.com/products/zero-theme-pro/?ref=vtyd-pro-page-features"
-              rounded
-            >
-              Buy Pro Now
-
-              <v-icon right>
-                mdi-rocket
-              </v-icon>
-            </base-btn>
-          </div>
-        </v-col>
-      </v-row>
-    </v-container>
   </base-section>
 </template>
 

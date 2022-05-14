@@ -2,9 +2,10 @@
   <section id="hero">
     <v-img
       :min-height="minHeight"
-      :src="require('@/assets/light.jpg')"
-      class="white--text"
+      :src="require('@/assets/images/fahagola.jpeg')"
+      class="white--text bannier"
       gradient="to bottom, rgba(11, 28, 61, .9), rgba(0,0,0,.4)"
+      height="450"
     >
       <v-container class="fill-height px-4 py-12">
         <v-responsive
@@ -15,38 +16,13 @@
         >
           <base-subheading
             weight="regular"
-            title="WE LOVE MAKING THINGS SIMPLE AND AMAZING"
+            title="En attendant le voyage dans le temps, et la colonisation de mars, nous vous présentons Fahagola. Encapsuler vos mémoires pour qu'elles voyagent vers le futur."
           />
-
-          <base-heading
-            size="text-h2"
-            title="WELCOME TO ZERO"
-            weight="medium"
-          />
-
-          <base-body>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nobis neque aspernatur in quas iure id aliquid, esse debitis, quibusdam mollitia! Quia ea expedita magnam totam, earum omnis et perspiciatis?
-          </base-body>
 
           <div
             :class="$vuetify.breakpoint.smAndDown ? 'flex-column align-start' : 'align-center'"
             class="d-flex flex-wrap"
-          >
-            <base-btn>
-              Discover More
-            </base-btn>
-
-            <span class="font-weight-bold ml-6 mr-4 my-4">or</span>
-
-            <base-btn
-              :ripple="false"
-              class="pa-1"
-              height="auto"
-              text
-            >
-              Get Started Now
-            </base-btn>
-          </div>
+          />
         </v-responsive>
       </v-container>
     </v-img>

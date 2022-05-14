@@ -6,7 +6,7 @@
   import LoadSections from '@/mixins/load-sections'
 
   export default {
-    name: 'Pro',
+    name: 'FlatRate',
 
     metaInfo: { title: 'Pro Features' },
 

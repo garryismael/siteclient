@@ -37,7 +37,7 @@
           cols="12"
           md="6"
         >
-          Copyright &copy; {{ new Date().getFullYear() }} Vuetify, LLC
+          Copyright &copy; {{ new Date().getFullYear() }} FAHAGOLA
         </v-col>
       </v-row>
     </v-container>

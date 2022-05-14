@@ -6,19 +6,13 @@
       elevation="1"
       elevate-on-scroll
       height="80"
+      color="#08172d"
     >
       <base-img
-        :src="require('@/assets/logo.svg')"
+        :src="require('@/assets/images/fahagola_logo.png')"
         class="mr-3 hidden-xs-only"
         contain
-        max-width="46"
-        width="100%"
-      />
-
-      <base-img
-        :src="require(`@/assets/zero-logo-${$vuetify.theme.isDark ? 'dark' : 'light'}.svg`)"
-        contain
-        max-width="96"
+        max-width="60"
         width="100%"
       />
 
@@ -55,7 +49,7 @@
         target="_blank"
         x-large
       >
-        Upgrade to PRO
+        Se connecter
       </v-btn>
 
       <v-app-bar-nav-icon
@@ -73,8 +67,8 @@
     data: () => ({
       drawer: null,
       items: [
-        'Home',
-        'Pro',
+        'Accueil',
+        'Forfaits',
       ],
     }),
   }
@@ -89,4 +83,7 @@
     .v-tab
       &::before
         display: none
+
+    a.v-tab
+      color: white
 </style>
