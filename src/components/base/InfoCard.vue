@@ -6,14 +6,18 @@
         no-gutters
       >
         <v-col
-          v-if="icon"
+          v-if="image"
           :class="`text-${align}`"
           cols="12"
           class="mb-4"
         >
-          <base-icon :color="color">
-            {{ icon }}
-          </base-icon>
+          <base-img
+            :src="require({ image })"
+            class="mr-3 hidden-xs-only"
+            contain
+            max-width="60"
+            width="100%"
+          />
         </v-col>
 
         <v-col

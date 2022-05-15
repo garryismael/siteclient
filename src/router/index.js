@@ -28,6 +28,11 @@ const router = new Router({
           name: 'Forfaits',
           component: () => import('@/views/flatrate/Index.vue'),
         },
+        {
+          path: 'memento',
+          name: 'Mémento',
+          component: () => import('@/views/memento/Index.vue'),
+        },
       ],
     },
 
