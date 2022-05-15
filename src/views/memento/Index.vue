@@ -1,29 +1,29 @@
 <template>
   <div class="container">
     <div class="general-search">
-      <v-row v-scroll:#scroll-target="onScroll">
-        <v-col
-          cols="12"
-          md="11"
-        >
-          <v-text-field
-            v-model="message3"
-            filled
-            label="Rechercher"
-            clearable
-          />
-        </v-col>
-        <div class="my-2">
-          <v-btn
-            color="primary"
-            fab
-            large
-            dark
-          >
-            <v-icon>mdi-crosshairs</v-icon>
-          </v-btn>
-        </div>
-      </v-row>
+            <v-row>
+                <v-col
+                cols="12"
+                md="11"
+                >
+                <v-text-field
+                    v-model="message3"
+                    filled
+                    label="Rechercher"
+                    clearable
+                />
+                </v-col>
+                <div class="my-2">
+                <v-btn
+                    color="primary"
+                    fab
+                    large
+                    dark
+                >
+                    <v-icon>mdi-crosshairs</v-icon>
+                </v-btn>
+                </div>
+            </v-row>
       <v-row
         no-gutters
       >
@@ -85,14 +85,7 @@
   export default {
     data: () => ({
       show: false,
-      offsetTop: 0,
     }),
-
-    methods: {
-      onScroll (e) {
-        this.offsetTop = e.target.scrollTop
-      },
-    },
   }
 
 </script>
