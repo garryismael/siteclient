@@ -21,17 +21,5 @@
 <script>
   export default {
     name: 'SectionProChart',
-
-    data: () => ({
-      features: [
-        ['Components', 5, '40+'],
-        ['Example Pages', 3, '10+'],
-        ['Vue CLI Support', true, true],
-        ['Bugfixes and Issues', false, true],
-        ['6 Months Free Updates', false, true],
-        ['Supports Vuetify', false, true],
-        ['Price', 'Free', '$59'],
-      ],
-    }),
   }
 </script>
