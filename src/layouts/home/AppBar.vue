@@ -41,10 +41,10 @@
 
       <v-btn
         class="font-weight-bold ml-6"
-        color="#11c684"
+        color="#ED156D"
         dark
         depressed
-        href="https://store.vuetifyjs.com/products/zero-theme-pro/?ref=vtyd-app-bar"
+        href="#"
         rel="noopener"
         target="_blank"
         x-large
