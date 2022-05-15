@@ -4,11 +4,11 @@
       <v-row>
         <v-col>
           <v-select
-          v-model="select"
-          :items="items"
-          label="Nos forfaits"
-          required
-        ></v-select>
+            v-model="select"
+            :items="items"
+            label="Nos forfaits"
+            required
+          />
         </v-col>
       </v-row>
       <v-row>
@@ -67,8 +67,6 @@
             :type="show1 ? 'text' : 'password'"
             name="input-10-1"
             label="Mot de passe"
-            hint="Au moins 8 caractères"
-            counter
             @click:append="show1 = !show1"
           />
         </v-col>
@@ -78,12 +76,12 @@
           md="6"
         >
           <v-text-field
+            v-model="confirmPass"
             :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.required, rules.min]"
+            :rules="[rules.required, rules.isSame]"
             :type="show2 ? 'text' : 'password'"
             name="input-10-2"
             label="Confirmer mot de passe"
-            hint="Au moins 8 caractères"
             class="input-group--focused"
             @click:append="show2 = !show2"
           />
@@ -111,9 +109,11 @@
         show1: false,
         show2: true,
         password: '',
+        confirmPass: '',
         rules: {
           required: value => !!value || 'Requis',
           min: v => v.length >= 8 || '8 caractères minimum',
+          isSame: v => v === this.password || 'Valeur n\'est pas conforme au champs "Mot de passe"',
         },
       }
     },
