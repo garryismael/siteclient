@@ -35,7 +35,7 @@
     data: () => ({
       cards: [
         {
-          icon: 'mdi-keyboard-outline',
+          btn: 'mdi-keyboard-outline',
           title: 'Free',
           text: 'Pour la maudite somme de gratuité, vous pouvez laisser une trace de votre existence sur Fahagola. Cela prend en compte tout message contextuel, des lettres d\'amour à la Roméo et Juliette ou encore votre thèse de doctorat, tout en respectant les limites du forfait.',
         },

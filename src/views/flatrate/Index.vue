@@ -1,5 +1,5 @@
 <template>
-  <v-form>
+  <v-form ref="form">
     <v-container>
       <v-row>
         <v-col>
@@ -48,10 +48,9 @@
       <v-row>
         <v-col>
           <v-file-input
-            accept="image/png, image/jpeg, image/jpg"
-            placeholder="Pick an avatar"
-            prepend-icon="mdi-camera"
-            label="Photo"
+            placeholder="Votre données"
+            prepend-icon="mdi-database-plus-outline"
+            label="Données"
           />
         </v-col>
       </v-row>
@@ -63,7 +62,7 @@
           <v-text-field
             v-model="password"
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.required, rules.min]"
+            :rules="passRules"
             :type="show1 ? 'text' : 'password'"
             name="input-10-1"
             label="Mot de passe"
@@ -90,22 +89,42 @@
       <v-row>
         <v-btn
           class="mr-4"
-          type="submit"
+          type="button"
           :disabled="invalid"
           @click="subscribe"
         >
           S'abonner
         </v-btn>
       </v-row>
+      <v-snackbar
+        v-model="snackbar"
+        :timeout="timeout"
+        color="success"
+      >
+        {{ text }}
+
+        <template #action="{ attrs }">
+          <v-btn
+            color="blue"
+            text
+            v-bind="attrs"
+            @click="snackbar = false"
+          >
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
     </v-container>
   </v-form>
 </template>
 
 <script>
+  import { mapActions, mapGetters } from 'vuex'
+  import { isRequired, min } from '@/utils/validators'
   export default {
     data () {
       return {
-        items: ['Items1', 'Items2', 'Items3'],
+        items: [],
         show1: false,
         show2: true,
         password: '',
@@ -117,9 +136,32 @@
         },
       }
     },
+    computed: {
+      ...mapGetters('forfaits', ['loaded', 'getForfaits']),
+      invalid () {
+        return false
+      },
+    },
+    async created () {
+      if (!this.loaded) {
+        await this.get_forfaits()
+      }
+      this.select = this.getForfaits
+      this.items = this.getForfaits
+    },
+    methods: {
+      ...mapActions('forfaits', ['get_forfaits']),
+      onSelect () {
+        this.currentItem = this.select
+      },
+      subscribe () {
+        if (this.$refs.form.validate()) {
+          this.snackbar = true
+        }
+      },
+    },
   }
 </script>
 
 <style scoped>
-
 </style>
