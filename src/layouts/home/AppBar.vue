@@ -68,6 +68,7 @@
       drawer: null,
       items: [
         'Accueil',
+        'Mémento',
         'Forfaits',
       ],
     }),
