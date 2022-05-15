@@ -6,6 +6,8 @@
           <v-select
             v-model="select"
             :items="items"
+            item-text="forfait_name"
+            return-object
             label="Nos forfaits"
             required
           />
@@ -98,7 +100,6 @@
       </v-row>
       <v-snackbar
         v-model="snackbar"
-        :timeout="timeout"
         color="success"
       >
         {{ text }}
@@ -120,7 +121,7 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  import { isRequired, min } from '@/utils/validators'
+  import { isRequired, min } from '../../utils/validators'
   export default {
     data () {
       return {
@@ -129,11 +130,20 @@
         show2: true,
         password: '',
         confirmPass: '',
+        firstname: '',
+        lastname: '',
+        email: '',
         rules: {
           required: value => !!value || 'Requis',
           min: v => v.length >= 8 || '8 caractères minimum',
           isSame: v => v === this.password || 'Valeur n\'est pas conforme au champs "Mot de passe"',
         },
+        select: null,
+        passRules: [
+          isRequired(), min(),
+        ],
+        snackbar: false,
+        text: null,
       }
     },
     computed: {
@@ -157,6 +167,7 @@
       subscribe () {
         if (this.$refs.form.validate()) {
           this.snackbar = true
+          this.text = 'Ajout avec success'
         }
       },
     },
